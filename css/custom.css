@@ -41,6 +41,12 @@ Experiment with colors, typography, spacing, and component styles.
 
 }
 
+.white {color: var(--white);}
+
+.centered-text {
+  text-align: center;
+}
+
 
 
 
@@ -403,4 +409,15 @@ hr {
   color: var(--primary-25);
   font-style: normal;
   font-weight: 500;
+}
+
+
+#homepage-hero-background {
+  background: url(../img/placeholder_bg.png) no-repeat center center/cover;
+}
+
+#color-overlay-bg {
+  background: rgba(55,136,223,0.81);
+  max-width: 90vw;
+  min-height: 60vh;
 }
