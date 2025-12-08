@@ -38,6 +38,14 @@ Experiment with colors, typography, spacing, and component styles.
   --white: #fff;
   
   /* You can add more custom colors here */
+--white: #FFFFFF;
+--dark-grey: #6F8295;
+--black: #113152;
+--orange: #FF9B36;
+--light-orange: #FFB54E;
+--blue: #3788DF;
+
+
 
 }
 
@@ -56,6 +64,8 @@ Experiment with colors, typography, spacing, and component styles.
 
 body {
   color: var(--primary-80);
+  background-color: var(--white);
+  font-family: 'Saira', sans-serif;
   /* font-family is set in framework.css but you can override it here if needed */
 }
 
@@ -112,6 +122,9 @@ section div+div {
   margin-top: var(--spacing8x1);
 }
 
+.gugi-text * {
+  font-family: 'Gugi', sans-serif;
+}
 
 /* Mobile Typography Adjustments */
 @media only screen and (max-width: 799px) {
@@ -230,10 +243,24 @@ header nav a.active {
   margin-top: var(--spacing8x12);
 }
 
+.hero-section {
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-section img {
+  width: 100%;
+  border-radius: 0px;
+  height: auto;
+  max-height: 500px;
+  display: block;
+  object-fit: cover;
+}
 
 /* Light background wrapper - extends to viewport edges */
 .light-bg-wrapper {
-  background: var(--grey);
+  background: var(--);
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
@@ -270,9 +297,39 @@ section p + a.button {
   margin-top: var(--spacing8x12);
 }
 
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobi1.tab3.desk8 {
+  color: var(--black)
+}
+
+.mobi1.tab8.desk3 {
+  color: var(--black)
+}
+
+.mobi1.tab1.desk1 *{
+  color: var(--white)
+}
+
+.mobi1.tab2.desk4.card {
+  background-color: var(--white);
+}
+.join-us-text * {
+  color: var(--white)
+}
+
+
 
 /* Footer Styles */
 footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
   width: 100%;
   background: var(--primary-100);
   color: var(--white);
@@ -318,6 +375,13 @@ footer nav, footer p {
   }
 }
 
+footer.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  text-align: center;
+}
+
 /* ==========================================================================
    COMPONENTS - CUSTOMIZE REUSABLE ELEMENTS
    ========================================================================== */
@@ -334,6 +398,20 @@ footer nav, footer p {
   color: var(--white);
 } 
 
+.light-orange-bg-wrapper {
+  background-color: var(--light-orange);
+  padding: 2rem 1rem;
+}
+
+.orange-bg-wrapper {
+  background-color: var(--orange);
+  padding: 1rem 1rem;
+}
+
+.black-bg-wrapper {
+  background-color: var(--black);
+  padding: 1rem 1rem;
+}
 
    /* Divider Lines */
 hr {
@@ -413,7 +491,7 @@ hr {
 
 
 #homepage-hero-background {
-  background: url(../img/placeholder_bg.png) no-repeat center center/cover;
+  background: url(../img/home2.jpg) no-repeat center center/cover;
 }
 
 #color-overlay-bg {
