@@ -320,6 +320,42 @@ section p + a.button {
 .mobi1.tab2.desk4.card {
   background-color: var(--white);
 }
+
+/* FAQ Grid - Center the three cards */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: var(--spacing8x3);
+}
+
+/* Title section spans full width */
+.faq-grid > .mobi1.tab1.desk1 {
+  grid-column: 1 / -1;
+}
+
+/* Center the three cards on desktop */
+@media only screen and (min-width: 800px) {
+  .faq-grid > .mobi1.tab2.desk4.card {
+    grid-column: span 4;
+  }
+  
+  /* Add empty column at start to center cards */
+  .faq-grid > .mobi1.tab2.desk4.card:first-of-type {
+    grid-column: 2 / span 4;
+  }
+}
+
+/* Tablet: Stack to 2 columns, centered */
+@media only screen and (max-width: 799px) and (min-width: 600px) {
+  .faq-grid > .mobi1.tab2.desk4.card {
+    grid-column: span 6;
+  }
+  
+  .faq-grid > .mobi1.tab2.desk4.card:nth-of-type(3) {
+    grid-column: 3 / span 6;
+  }
+}
+
 .join-us-text * {
   color: var(--white)
 }
@@ -330,38 +366,51 @@ section p + a.button {
 footer {
   background: var(--black);
   color: var(--white);
-  padding: var(--spacing8x2) 0;
   width: 100%;
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto auto auto;
+  column-gap: var(--spacing8x3);
+  row-gap: var(--spacing8x2);
+  padding: var(--spacing8x3) var(--spacing8x3);
   align-items: center;
-  gap: var(--spacing8x2);
-  padding: var(--spacing8x3) var(--spacing8x2);
-  border-bottom: 1px solid var(--primary-25);
+}
+
+.footer-logo {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .footer-logo img {
-  width: 180px;
+  width: 200px;
   height: auto;
+  display: block;
 }
 
 .footer-nav {
+  grid-column: 1 / -1;
+  grid-row: 1;
   display: flex;
   justify-content: center;
   gap: var(--spacing8x2);
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 .footer-nav a {
   color: var(--white);
-  font-size: 16px;
+  font-size: 13px;
   text-decoration: none;
   transition: all 300ms;
-  padding-bottom: 4px;
+  padding-bottom: 2px;
   border-bottom: 2px solid transparent;
+  white-space: nowrap;
 }
 
 .footer-nav a:hover {
@@ -373,10 +422,16 @@ footer {
 }
 
 .footer-email {
+  grid-column: 3;
+  grid-row: 1;
   color: var(--white);
-  font-size: 14px;
+  font-size: 12px;
   text-decoration: none;
   text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  white-space: nowrap;
 }
 
 .footer-email:hover {
@@ -386,30 +441,39 @@ footer {
 
 .footer-divider {
   grid-column: 1 / -1;
+  grid-row: 2;
+  width: 100%;
   height: 1px;
   background: var(--primary-25);
-  margin: var(--spacing8x1) 0;
+  margin-top: var(--spacing8x2);
+  margin-bottom: var(--spacing8x2);
 }
 
 .footer-copyright {
   grid-column: 1 / -1;
+  grid-row: 3;
+  width: 100%;
   color: var(--white);
-  font-size: 12px;
+  font-size: 11px;
   text-align: center;
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.5;
+  padding: var(--spacing8x1) 0;
 }
 
 /* Mobile Footer Adjustments */
 @media only screen and (max-width: 799px) {
   .footer-grid {
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
     gap: var(--spacing8x2);
-    padding: var(--spacing8x2) var(--spacing8x1);
+    padding: var(--spacing8x2) var(--spacing8x2);
   }
 
   .footer-logo {
-    text-align: center;
+    grid-column: 1;
+    grid-row: 1;
+    justify-content: center;
   }
 
   .footer-logo img {
@@ -417,36 +481,34 @@ footer {
   }
 
   .footer-nav {
+    grid-column: 1;
+    grid-row: 2;
     justify-content: center;
-    gap: var(--spacing8x1);
+    gap: var(--spacing8x2);
+    flex-wrap: wrap;
   }
 
   .footer-nav a {
-    font-size: 14px;
-  }
-
-  .footer-email {
-    text-align: center;
     font-size: 12px;
   }
 
+  .footer-email {
+    grid-column: 1;
+    grid-row: 3;
+    justify-content: center;
+    text-align: center;
+    font-size: 11px;
+  }
+
   .footer-divider {
-    margin: var(--spacing8x1) 0;
+    grid-column: 1;
+    grid-row: 4;
   }
 
   .footer-copyright {
-    font-size: 11px;
-  }
-}
-
-/* Tablet Footer Adjustments */
-@media only screen and (min-width: 800px) and (max-width: 1279px) {
-  .footer-grid {
-    padding: var(--spacing8x2);
-  }
-
-  .footer-logo img {
-    width: 180px;
+    grid-column: 1;
+    grid-row: 5;
+    font-size: 10px;
   }
 }
 
@@ -770,11 +832,19 @@ hr {
 /* Organizers Section */
 .organizers-section {
   gap: var(--spacing8x2);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+}
+
+.organizers-section > h2 {
+  grid-column: 1 / -1;
 }
 
 .organizer-card {
   text-align: center;
   padding: var(--spacing8x2);
+  grid-column: span 1;
 }
 
 .organizer-image {
@@ -811,14 +881,14 @@ hr {
 }
 
 .organizer-email a {
-  color: var(--white);
+  color: var(--primary-80);
   text-decoration: none;
   font-size: 14px;
   transition: all 300ms;
 }
 
 .organizer-email a:hover {
-  color: var(--primary-80);
+  color: var(--blue);
   text-decoration: underline;
 }
 
@@ -839,6 +909,18 @@ hr {
 
 /* Mobile Adjustments */
 @media only screen and (max-width: 799px) {
+  .organizers-section {
+    grid-template-columns: 1fr;
+  }
+
+  .organizers-section > h2 {
+    grid-column: 1;
+  }
+
+  .organizer-card {
+    grid-column: span 1;
+  }
+
   .contact-hero h1 {
     font-size: 36px;
   }
@@ -875,6 +957,10 @@ hr {
 
 /* Tablet Adjustments */
 @media only screen and (min-width: 800px) and (max-width: 1279px) {
+  .organizers-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .contact-hero h1 {
     font-size: 42px;
   }
@@ -882,12 +968,8 @@ hr {
 
 /* Desktop Adjustments */
 @media only screen and (min-width: 1280px) {
-  .contact-hero h1 {
-    font-size: 48px;
-  }
-
-  .organizer-card::before {
-    width: 80px;
+  .organizers-section {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -918,7 +1000,7 @@ hr {
 }
 
 .about-text p {
-  color: var(--dark-grey);
+  color: var(--black);
   font-size: 16px;
   line-height: 1.6;
 }
@@ -950,7 +1032,7 @@ hr {
 }
 
 .goal-text p {
-  color: var(--dark-grey);
+  color: var(--black);
   font-size: 16px;
   line-height: 1.6;
 }
