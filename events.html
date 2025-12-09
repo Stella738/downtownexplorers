@@ -22,7 +22,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>HTML + CSS</title>
+    <title>Events - Downtown Explorers Club</title>
 
     <!-- Font Awesome for icons -->
     <script src="https://kit.fontawesome.com/d0544f08d4.js" crossorigin="anonymous"></script>
@@ -74,7 +74,7 @@
         </div>
       </div>
       <a href="events.html">Events</a>
-      <a href="contact.html">Contact Us</a>
+      <a href="http://www.discord.gg">Contact Us</a>
       </nav>
     </div>
     
@@ -84,11 +84,11 @@
 
    <!-- Header Section -->
     <header class="grid desktop-nav">
-      <a href="#" class="mobi2 tab2 desk2">
+      <a href="index.html" class="mobi2 tab2 desk2">
         <img src="img/logoLightBG.png" alt="Club Name" />
       </a>
       <nav class="mobi0 tab2 desk2">
-        <a href="#" class="active">Home</a>
+        <a href="index.html">Home</a>
         <div class="dropdown">
           <a href="#">About <i class="fa-solid fa-chevron-down"></i></a>
           <div class="dropdown-menu">
@@ -96,8 +96,8 @@
             <a href="gallery.html">Gallery</a>
           </div>
         </div>
-        <a href="events.html">Events</a>
-        <a href="contact.html">Contact Us</a>
+        <a href="events.html" class="active">Events</a>
+        <a href="http://www.discord.gg">Contact Us</a>
       </nav>
     </header>
 
@@ -108,158 +108,127 @@
     *                                                                                       *
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-
-    <!-- Who We Are -->
-     <div class="dark-bg-wrapper gugi-text" id="homepage-hero-background">
+    <!-- Upcoming Events Section -->
+    <div class="light-blue-bg-wrapper">
       <section class="grid">
-        <h1 class="mobi1 tab1 desk1 white centered-text">Welcome to Downtown Explorers Club!</h1>
+        <h1 class="mobi1 tab1 desk1">Upcoming Events</h1>
+
+        <!-- Event Card 1 -->
+        <div class="mobi1 tab3 desk3 event-card">
+          <picture>
+            <source media="(max-width: 799px)" srcset="img/event1.jpg" />
+            <source media="(min-width: 800px)" srcset="img/event1.jpg" />
+            <img
+              src="img/event1.jpg"
+              alt="Movie Night Event"
+              class="placeholder event-image"
+            />
+          </picture>
+          <div class="event-content">
+            <h3>Movie Night <span class="event-location">Toronto, ON</span></h3>
+            <p class="event-date">Saturday, Oct 18, 2025</p>
+            <p class="event-time">2:00 PM - 8:00 PM</p>
+          </div>
+        </div>
+
+        <!-- Event Card 2 -->
+        <div class="mobi1 tab3 desk3 event-card">
+          <picture>
+            <source media="(max-width: 799px)" srcset="img/event2.jpg" />
+            <source media="(min-width: 800px)" srcset="img/event2.jpg" />
+            <img
+              src="img/event2.jpg"
+              alt="Pool & Chill Event"
+              class="placeholder event-image"
+            />
+          </picture>
+          <div class="event-content">
+            <h3>Pool & Chill <span class="event-location">Toronto, ON</span></h3>
+            <p class="event-date">Wednesday, Oct 22, 2025</p>
+            <p class="event-time">6:00 PM - 11:00 PM</p>
+          </div>
+        </div>
+
+        <!-- Event Card 3 -->
+        <div class="mobi1 tab3 desk3 event-card">
+          <picture>
+            <source media="(max-width: 799px)" srcset="img/event3.jpg" />
+            <source media="(min-width: 800px)" srcset="img/event3.jpg" />
+            <img
+              src="img/event3.jpg"
+              alt="Explore Cafe Event"
+              class="placeholder event-image"
+            />
+          </picture>
+          <div class="event-content">
+            <h3>Explore Cafe <span class="event-location">Toronto, ON</span></h3>
+            <p class="event-date">Saturday, Nov 8, 2025</p>
+            <p class="event-time">2:00 PM - 8:00 PM</p>
+          </div>
+        </div>
       </section>
-      <div class="dark-bg-wrapper" id="color-overlay-bg">
+    </div>
+
+    <!-- Past Events Section -->
+    <div class="white-bg-wrapper">
       <section class="grid">
-        <h2 class="mobi1 tab8 desk8 white">Who We Are</h2>
-        <p class="mobi1 tab8 desk8 white">We are your invitation to step off campus and into the heart of Toronto. Whether you are new to the city, intimidated by the subway, or just looking for a friendly group to hang out with, you belong here.</p>
-      </section>
-      </div>
-     </div>
+        <h2 class="mobi1 tab1 desk1">Past Events</h2>
 
+        <!-- Past Event Card 1 -->
+        <div class="mobi1 tab3 desk3 event-card">
+          <picture>
+            <source media="(max-width: 799px)" srcset="img/event4.jpg" />
+            <source media="(min-width: 800px)" srcset="img/event4.jpg" />
+            <img
+              src="img/event4.jpg"
+              alt="Bowling Night Event"
+              class="placeholder event-image"
+            />
+          </picture>
+          <div class="event-content">
+            <h3>Bowling Night <span class="event-location">Toronto, ON</span></h3>
+            <p class="event-date">Saturday, Oct 11, 2025</p>
+            <p class="event-time">3:00 PM - 8:00 PM</p>
+          </div>
+        </div>
 
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-     Student Testimonial 1 -->
+        <!-- Past Event Card 2 -->
+        <div class="mobi1 tab3 desk3 event-card">
+          <picture>
+            <source media="(max-width: 799px)" srcset="img/event5.jpg" />
+            <source media="(min-width: 800px)" srcset="img/event5.jpg" />
+            <img
+              src="img/event5.jpg"
+              alt="Acorn Festival Event"
+              class="placeholder event-image"
+            />
+          </picture>
+          <div class="event-content">
+            <h3>Acorn Festival <span class="event-location">Toronto, ON</span></h3>
+            <p class="event-date">Wednesday, Sept 24, 2025</p>
+            <p class="event-time">3:00 PM - 8:00 PM</p>
+          </div>
+        </div>
 
-    <div class="light-orange-bg-wrapper">
-      <section class="grid testimonial">
-        <h3 class="mobi1 tab3 desk8">"This club made me feel at home in a new city. I wouldn't have known how to get downtown without them. I've also found my best friends here, and we always have a blast at the events!"</h3>
-        <p class="mobi1 tab8 desk3">-Sarah M. Interaction Design, First Year</p>
-      </section>
-    </div>
-
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->  
-
-    
-
-
-
-
-
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-    Why Join Us? -->
-    <div class="orange-bg-wrapper">
-      <section class="grid join-us-text">
-
-      <h2 class="mobi1 tab1 desk1">Why Join Us?</h2>
-      <div class="mobi1 tab3 desk3 mobi-h-cent">
-        
-        <p>Build Friendships:<br>Meet new people and create a supportive network right away.</p>
-      </div>
-      <div class="mobi1 tab3 desk3">
-        <p>Discover Toronto:<br>Visit parts of the city you might not find on your own.</p>
-      </div>
-      <div class="mobi1 tab3 desk3">
-        <p>Create Memories:<br>Share experiences that will become some of your best memories.</p>
-      </div>
-    </section>
-    </div>
-    
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-      
-
-    
-
-
-
-
-
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-    Step Off Campus. Step Into the City. -->
-
-    <div class="black-bg-wrapper">
-  
-      <section class="grid hero-section">
-      <div class="mobi1 tab3 desk3">
-        <picture>
-          <source media="(max-width: 799px)" srcset="img/home.jpg" />
-          <source media="(min-width: 800px)" srcset="img/home.jpg" />
-          <img
-            src="img/home.jpg"
-            alt="landscape"
-            class="placeholder"
-          />
-        </picture>
-      </div>
-      <div class="mobi1 tab3 desk3 mobi-h-cent">
-        <h2 style="color: var(--white); font-family: 'Gugi', sans-serif;">Step Off Campus.<br>Step Into the City.</h2>
-      </div>
-    </section>
-
-    </div>
-
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
-      
-
-    
-
-
-
-
-
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-    Student Testimonial 2 -->
-
-    <div class="light-orange-bg-wrapper">
-      <section class="grid testimonial">
-        <h3 class="mobi1 tab3 desk8">"I made my first real friends in Toronto, thanks to this club."</h3>
-        <p class="mobi1 tab8 desk3">-Aisha J, Computer Science, First Year</p>
+        <!-- Past Event Card 3 -->
+        <div class="mobi1 tab3 desk3 event-card">
+          <picture>
+            <source media="(max-width: 799px)" srcset="img/event6.jpg" />
+            <source media="(min-width: 800px)" srcset="img/event6.jpg" />
+            <img
+              src="img/event6.jpg"
+              alt="Art Gallery Event"
+              class="placeholder event-image"
+            />
+          </picture>
+          <div class="event-content">
+            <h3>Art Gallery <span class="event-location">Toronto, ON</span></h3>
+            <p class="event-date">Wednesday, Sept 17, 2025</p>
+            <p class="event-time">3:00 PM - 8:00 PM</p>
+          </div>
+        </div>
       </section>
     </div>
-
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
-
-
-
-
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-    FAQ -->
-    <div class="black-bg-wrapper">
-      <section class="grid faq-grid">
-      <div class="mobi1 tab1 desk1">
-        <h3>FAQ</h3>
-        <p>frequently asked question</p>
-      </div>
-      <div class="mobi1 tab2 desk4 card">
-        <h4>Q: Do I need to know the TTC?</h4>
-        <p>A: Not at all! We meet on campus, and the organizers will guide the group the whole way.</p>
-      </div>
-      <div class="mobi1 tab2 desk4 card">
-        <h4>Q: How do I join the club?</h4>
-        <p>A: Just show up to an event! Visit our Discord or Instagram for the sign-up form.</p>
-      </div>
-      <div class="mobi1 tab2 desk4 card">
-        <h4>Q: Do I have to pay to join or attend events?</h4>
-        <p>A: Most of our events are free! Sometimes there might be a small fee to cover food or tickets, but we always let you know in advance.</p>
-      </div>
-    </section>
-    </div>
-  
-
-
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
-
-
-
-
-    
-
- 
-    
-
-
 
     <!-- * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * * * * * * * * * *
     *                                                                                       *
@@ -272,12 +241,12 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="events.html">Events</a>
-      <a href="contact.html">Contact Us</a>
+      <a href="http://www.discord.gg">Contact Us</a>
       <a href="mailto:downtownexplorers@club.com" class="mobi2 tab2 desk2">downtownexplorers@club.com</a>
       <p class="mobi2 tab2 desk2">&copy; Sheridan College 2025</p>
     </footer>
 
-
+    </div>
 
   </body>
 </html>
