@@ -445,7 +445,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--primary-100);
+  background-color: var(--blue);
   z-index: 1000;
   transform: translateX(-100%);
   transition: transform 0.3s ease;
