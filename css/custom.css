@@ -44,6 +44,7 @@ Experiment with colors, typography, spacing, and component styles.
 --orange: #FF9B36;
 --light-orange: #FFB54E;
 --blue: #3788DF;
+--light-blue: #C7DEF6;
 
 
 
@@ -187,7 +188,7 @@ a.button-highlight {
 
 /* Header styles */
 header img {
-  width: 160px;
+  width: 240px;
   /* Try adjusting: width, border-radius for logo styling */
 }
 
@@ -327,59 +328,126 @@ section p + a.button {
 
 /* Footer Styles */
 footer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
-  width: 100%;
-  background: var(--primary-100);
+  background: var(--black);
   color: var(--white);
-  padding: 40px 20px 20px;
-  /* Try customizing: background gradients, text alignment, etc. */
+  padding: var(--spacing8x2) 0;
+  width: 100%;
 }
 
-footer img {
-  width: 160px;
+.footer-grid {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--spacing8x2);
+  padding: var(--spacing8x3) var(--spacing8x2);
+  border-bottom: 1px solid var(--primary-25);
 }
 
-footer hr {
-  margin: 10px 0 20px;
-  border: none;
-  border-bottom: 1.5px solid var(--primary-25);
+.footer-logo img {
+  width: 180px;
+  height: auto;
 }
 
-footer a, footer p {
-  color: var(--secondary-color);
-  font-size: 12px;
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing8x2);
+  flex-wrap: wrap;
 }
 
-footer nav a { 
+.footer-nav a {
+  color: var(--white);
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 300ms;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+.footer-nav a:hover {
+  color: var(--blue);
+}
+
+.footer-nav a.active {
+  border-bottom: 2px solid var(--white);
+}
+
+.footer-email {
+  color: var(--white);
   font-size: 14px;
-}
-
-footer nav a + a {
-  margin-left: 40px;
-}
-
-footer nav, footer p {
+  text-decoration: none;
   text-align: right;
+}
+
+.footer-email:hover {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+.footer-divider {
+  grid-column: 1 / -1;
+  height: 1px;
+  background: var(--primary-25);
+  margin: var(--spacing8x1) 0;
+}
+
+.footer-copyright {
+  grid-column: 1 / -1;
+  color: var(--white);
+  font-size: 12px;
+  text-align: center;
+  margin: 0;
+  line-height: 1.6;
 }
 
 /* Mobile Footer Adjustments */
 @media only screen and (max-width: 799px) {
-  footer nav {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing8x2);
+    padding: var(--spacing8x2) var(--spacing8x1);
+  }
+
+  .footer-logo {
     text-align: center;
   }
 
-  footer img {
-    margin: 0 auto;
+  .footer-logo img {
+    width: 180px;
+  }
+
+  .footer-nav {
+    justify-content: center;
+    gap: var(--spacing8x1);
+  }
+
+  .footer-nav a {
+    font-size: 14px;
+  }
+
+  .footer-email {
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .footer-divider {
+    margin: var(--spacing8x1) 0;
+  }
+
+  .footer-copyright {
+    font-size: 11px;
   }
 }
 
-footer.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
-  text-align: center;
+/* Tablet Footer Adjustments */
+@media only screen and (min-width: 800px) and (max-width: 1279px) {
+  .footer-grid {
+    padding: var(--spacing8x2);
+  }
+
+  .footer-logo img {
+    width: 180px;
+  }
 }
 
 /* ==========================================================================
@@ -506,7 +574,7 @@ hr {
 
 /* Background Wrappers */
 .light-blue-bg-wrapper {
-  background-color: #CED7E4;
+  background-color: var(--light-blue);
   padding: var(--spacing8x2) 0;
 }
 
@@ -616,7 +684,7 @@ hr {
 
 /* Background Wrappers */
 .dark-blue-bg-wrapper {
-  background-color: var(--primary-100);
+  background-color: var(--black);
   padding: var(--spacing8x3) 0;
 }
 
@@ -628,7 +696,7 @@ hr {
 /* Contact Hero Section */
 .contact-hero-bg-wrapper {
   background: url(../img/contact.jpg) no-repeat center center/cover;
-  padding: var(--spacing8x4) 0;
+  padding: var(--spacing8x8) 0;
   position: relative;
 }
 
@@ -659,6 +727,7 @@ hr {
   line-height: 1.6;
 }
 
+
 /* Contact Information Items */
 .contact-info {
   gap: var(--spacing8x2);
@@ -688,7 +757,7 @@ hr {
 }
 
 .contact-item a {
-  color: var(--blue);
+  color: var(--white);
   text-decoration: none;
   transition: all 300ms;
 }
@@ -742,7 +811,7 @@ hr {
 }
 
 .organizer-email a {
-  color: var(--blue);
+  color: var(--white);
   text-decoration: none;
   font-size: 14px;
   transition: all 300ms;

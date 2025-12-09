@@ -298,6 +298,14 @@ img {
   box-sizing: border-box;
 }
 
+.contact-hero-bg-wrapper {
+  background: var(--primary-80);
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding: var(--spacing8x3) calc(50vw - 50%);
+  box-sizing: border-box;
+}
 
 /* Content that spans the full width and is divided in half */
 .dual-full-width {
